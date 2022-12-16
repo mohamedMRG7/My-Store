@@ -1,8 +1,9 @@
 .example-card {
     max-width: 300px;
   }
+
+  /* Taken from StackOverFlow */
+  .cardeff >:hover{
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
   
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
