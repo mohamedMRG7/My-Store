@@ -19,7 +19,12 @@ import { MatInputModule } from '@angular/material/input';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
-import { QuentityComponent } from './shared/quentity/quentity.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import { CartInfoComponent } from './cart/cart-info/cart-info.component';
+import { CartItemComponent } from './cart/cart-item/cart-item.component';
+import { PaymentInfoComponent } from './cart/payment-info/payment-info.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -28,14 +33,17 @@ import { QuentityComponent } from './shared/quentity/quentity.component';
     ProductItemComponent,
     ProductListComponent,
     ProductDetailsComponent,
-    QuentityComponent
+    CartInfoComponent,
+    CartItemComponent,
+    PaymentInfoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule, MatSlideToggleModule, MatToolbarModule
     , MatIconModule, MatBadgeModule, MatCardModule
-    , MatButtonModule, MatFormFieldModule, MatSelectModule,FormsModule, ReactiveFormsModule,MatInputModule,MatGridListModule
+    , MatButtonModule, MatFormFieldModule, MatSelectModule,FormsModule, ReactiveFormsModule,MatInputModule,MatGridListModule,MatStepperModule
+    ,MatTabsModule,MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
