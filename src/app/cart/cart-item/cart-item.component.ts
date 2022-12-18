@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 interface Transaction {
   item: string;
@@ -11,7 +11,7 @@ interface Transaction {
   styleUrls: ['./cart-item.component.css']
 })
 export class CartItemComponent implements OnInit {
- 
+  @Input() pageType:string='';
   displayedColumns: string[] = ['item', 'cost','amount'];
   transactions: Transaction[] = [
     {item: 'Beach ball', cost: 4},

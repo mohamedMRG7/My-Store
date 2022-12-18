@@ -1,12 +1,12 @@
 <div class="cardeff">
     <mat-card class="example-card" >
 
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" routerLink="productDetails" alt="Description">
+        <img mat-card-image [src]="product.image" routerLink="productDetails" alt="Description">
         <mat-card-content>
     
             <div class="row">
-                <mat-card-title class="col-12">Shiba Inu</mat-card-title>
-                <p>$13</p>
+                <mat-card-title class="col-12">{{product.title}}</mat-card-title>
+                <p>${{product.price}}</p>
             </div>
     
     

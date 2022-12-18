@@ -14,17 +14,19 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { ProductListComponent } from './product/product-list/product-list.component';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
-import {MatStepperModule} from '@angular/material/stepper';
+import { MatStepperModule } from '@angular/material/stepper';
 import { CartInfoComponent } from './cart/cart-info/cart-info.component';
 import { CartItemComponent } from './cart/cart-item/cart-item.component';
-import { PaymentInfoComponent } from './cart/payment-info/payment-info.component';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatTableModule} from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { HttpClientModule } from '@angular/common/http';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -34,16 +36,30 @@ import {MatTableModule} from '@angular/material/table';
     ProductListComponent,
     ProductDetailsComponent,
     CartInfoComponent,
-    CartItemComponent,
-    PaymentInfoComponent
+    CartItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule, MatSlideToggleModule, MatToolbarModule
-    , MatIconModule, MatBadgeModule, MatCardModule
-    , MatButtonModule, MatFormFieldModule, MatSelectModule,FormsModule, ReactiveFormsModule,MatInputModule,MatGridListModule,MatStepperModule
-    ,MatTabsModule,MatTableModule
+    BrowserAnimationsModule
+    , MatSlideToggleModule
+    , MatToolbarModule
+    , MatIconModule
+    , MatBadgeModule
+    , MatCardModule
+    , MatButtonModule
+    , MatFormFieldModule
+    , MatSelectModule
+    , FormsModule
+    , ReactiveFormsModule
+    , MatInputModule
+    , MatGridListModule
+    , MatStepperModule
+    , MatTabsModule
+    , MatTableModule
+    , InputNumberModule
+    , HttpClientModule
+    ,MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
