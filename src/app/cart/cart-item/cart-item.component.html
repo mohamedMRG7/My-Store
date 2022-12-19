@@ -7,7 +7,7 @@
             <div class="row">
                 <img style="width: 60px;height: 60px;" [src]="item.product.image" 
                     alt="Description" class="img-thumbnail col-12">
-               <p class="my-auto">{{item.product.title}}</p>
+               <a class="my-auto" routerLink="/productDetails" [queryParams]="{'product': item.product.id}">{{item.product.title}}</a>
             </div>
             
         </td>

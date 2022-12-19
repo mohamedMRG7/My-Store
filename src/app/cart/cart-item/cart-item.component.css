@@ -5,7 +5,7 @@ table {
   }
 
 
-  p{
+  a{
     white-space: nowrap; 
     width: 300px; 
     overflow: hidden;
