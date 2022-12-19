@@ -1,4 +1,5 @@
 import { Component, DoCheck, Input, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { Cart } from 'src/app/models/cart';
 import { CartService } from 'src/app/services/cart/cart.service';
@@ -21,7 +22,7 @@ export class CartItemComponent implements OnInit,DoCheck {
   dataSource=new MatTableDataSource(this.cartItems);
   
 
- constructor(private cartService:CartService){}
+ constructor(private cartService:CartService,private _snackBar1: MatSnackBar){}
   ngDoCheck(): void {
     this.cartItems=this.cartService.getProductsInCart();
     this.dataSource._updateChangeSubscription();
@@ -56,6 +57,8 @@ export class CartItemComponent implements OnInit,DoCheck {
   checkQuentity(cartItem:Cart):void{
     if(cartItem.quentity===0){
       this.cartService.removeFromCart(cartItem.product.id);
+      this._snackBar1.open('Product removed from the cart', 'Dismis')._dismissAfter(2000);
+
     }
   }
 }
