@@ -4,7 +4,7 @@
     
     <mat-card-header class="col-6" >
         <img mat-card-image  [src]="product.image" 
-            alt="Description"  class="img-thumbnail">
+            alt="Description"  >
 
     </mat-card-header>
     <div class="col-1"></div>
@@ -12,6 +12,8 @@
         <div class="row mt-5">
             <mat-card-title class="col-12">{{product.title}}</mat-card-title>
             <h3> ${{product.price}}</h3>
+            <p-rating [ngModel]="product.rating.rate" [readonly]="true" [stars]="5" [cancel]="false"></p-rating>
+
             <p style="word-wrap: break-word;">{{product.description}}</p>
             
             

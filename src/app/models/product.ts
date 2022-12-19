@@ -4,4 +4,10 @@ export interface Product {
     price:number;
     description:string;
     image:string;
+    rating:Rating;
+}
+
+
+interface Rating {
+    rate:number;
 }

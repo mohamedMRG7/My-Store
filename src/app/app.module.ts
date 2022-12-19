@@ -28,6 +28,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { HttpClientModule } from '@angular/common/http';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {RatingModule} from 'primeng/rating';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     , HttpClientModule
     ,MatProgressSpinnerModule
     ,MatSnackBarModule
+    ,RatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
