@@ -32,10 +32,11 @@ export class CartService {
     })
   }
   isProductExist(product: Product): boolean { return this.cartList.filter(p => p.product.id === product.id).length > 0 }
-  removeFromCart(id: Number): void {
-    const index = this.cartList.findIndex(p => { p.product.id === id })
+  removeFromCart(id: number): void {
+
+    const index = this.cartList.findIndex(p =>  p.product.id === id )
     this.cartList.splice(index, 1);
-  }
+  }           
 
   setCompletedItems() {
     this.cartList.forEach(i => this.completedItems.push(i));

@@ -4,7 +4,7 @@ import { CartInfoComponent } from './cart/cart-info/cart-info.component';
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 
-const routes: Routes = [{path:'',component:ProductListComponent},{path:'productDetails',component:ProductDetailsComponent},{path:"cart",component:CartInfoComponent}];
+const routes: Routes = [{path:'products',component:ProductListComponent},{path:'productDetails',component:ProductDetailsComponent},{path:"cart",component:CartInfoComponent},{path:'',redirectTo:'products',pathMatch:'full'},];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
