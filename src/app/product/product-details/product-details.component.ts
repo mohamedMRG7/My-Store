@@ -15,7 +15,7 @@ import { ProductService } from 'src/app/services/product/product.service';
 })
 export class ProductDetailsComponent extends CartBase implements OnInit, OnDestroy {
   
-  product!: Product;
+  product: Product={description:'',id:0,image:'',price:1,rating:{rate:0},title:''};
   subscriber: Subscription = new Subscription()
   constructor(private router: ActivatedRoute, private productService: ProductService, private cartService: CartService, private  _snackBar: MatSnackBar) {
     super(_snackBar,cartService);
