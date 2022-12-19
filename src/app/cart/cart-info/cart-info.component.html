@@ -1,5 +1,5 @@
 <mat-stepper linear="true" #stepper>
-  <mat-step [editable]="stepperEditable">
+  <mat-step [editable]="stepperEditable" [stepControl]="items">
     <form>
       <ng-template matStepLabel>Cart Items</ng-template>
       <app-cart-item></app-cart-item>
@@ -8,7 +8,7 @@
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="paymentFormGroup" label="Payment Info" [editable]="stepperEditable">
+  <mat-step [stepControl]="paymentFormGroup" label="Payment Info" [editable]="stepperEditable"  >
     <form [formGroup]="paymentFormGroup">
 
       <div class="row mx-4 my-4">

@@ -1,6 +1,6 @@
 
 
-<mat-grid-list cols="4" rowHeight="600px"  class="d-flex align-items-center justify-content-center">
+<mat-grid-list cols="3" rowHeight="600px"  class="d-flex align-items-center justify-content-center">
     <mat-grid-tile  *ngFor="let product of products" > <app-product-item  *ngIf="dataLoaded" [product]="product" ></app-product-item></mat-grid-tile>
     <mat-spinner *ngIf="!dataLoaded" ></mat-spinner>
 
