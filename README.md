@@ -1,6 +1,6 @@
 # MyStore
 
-E-Commerice application That allow you to buy diffrent products and control your cart in easy way  
+E-Commerce application That allows you to buy different products and control your cart in an easy way
 
 ## Development server
 1-Go to project folder 'My-Store' in cmd
