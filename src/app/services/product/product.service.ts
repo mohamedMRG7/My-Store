@@ -8,11 +8,17 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-  products:Product[]=[];
+  
+  baseUrl:string='https://fakestoreapi.com/products';
   constructor(private http:HttpClient) { }
 
   getProductList():Observable<Product[]>{
-   return this.http.get<Product[]>('https://fakestoreapi.com/products');
+   return this.http.get<Product[]>(this.baseUrl);
+  }
+
+
+  getProductByID(id:Number):Observable<Product>{
+    return this.http.get<Product>(this.baseUrl+'/'+id);
   }
 
 }

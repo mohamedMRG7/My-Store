@@ -1,10 +1,10 @@
-<mat-toolbar >
+<mat-toolbar style="background-color: transparent">
     <div>
         <span>My Store</span>
         <button mat-button style="height: 65px;margin-left: 10px;" routerLink="" >Product List</button>
     </div>
     <span class="example-spacer"></span>
     <button mat-icon-button  aria-label="Example icon-button with heart icon" routerLink="cart">
-      <mat-icon aria-hidden="false" aria-label="Example home icon" matBadgeColor="warn" [matBadge]="15" >add_shopping_cart</mat-icon>
+      <mat-icon aria-hidden="false" aria-label="Example home icon" matBadgeColor="warn" [matBadge]="productsInCartNumber " >add_shopping_cart</mat-icon>
     </button>
   </mat-toolbar>

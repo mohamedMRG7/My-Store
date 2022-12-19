@@ -1,7 +1,7 @@
 <div class="cardeff">
     <mat-card class="example-card" >
 
-        <img mat-card-image [src]="product.image" routerLink="productDetails" alt="Description">
+        <img mat-card-image [src]="product.image" routerLink="productDetails" [queryParams]="{'product': product.id}" alt="Description">
         <mat-card-content>
     
             <div class="row">
@@ -25,7 +25,7 @@
         </mat-card-content>
     
         <mat-card-actions>
-            <button mat-button [disabled]="selectFormControl.invalid">Add to cart</button>
+            <button mat-button [disabled]="selectFormControl.invalid" (click)="addToCart()">Add to cart</button>
             <button mat-button routerLink="productDetails">Info</button>
 
         </mat-card-actions>
