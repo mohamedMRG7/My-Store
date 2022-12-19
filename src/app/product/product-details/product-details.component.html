@@ -28,8 +28,8 @@
               </mat-form-field>
 
 
-            <button mat-button [disabled]="selectFormControl.invalid" class="btn btn-outline-dark" style="border-style: groove; border-radius: 20px;">Add to cart</button>
-            <button mat-button class="btn btn-outline-dark" style="border-style: groove; border-radius: 20px;" routerLink="">Back</button>
+            <button mat-button [disabled]="selectFormControl.invalid" class="btn btn-outline-dark"  (click)="addToCart(product,selectFormControl.value)">Add to cart</button>
+            <button mat-button class="btn btn-outline-dark"  routerLink="">Back</button>
 
         </div>
 

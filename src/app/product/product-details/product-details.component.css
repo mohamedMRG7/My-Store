@@ -4,3 +4,6 @@ img {
     margin: auto;
     object-fit: contain;
   }
+  button{
+    border-style: groove; border-radius: 20px;
+  }

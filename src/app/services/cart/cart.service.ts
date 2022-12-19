@@ -6,34 +6,45 @@ import { Product } from 'src/app/models/product';
   providedIn: 'root'
 })
 export class CartService {
-  cartList:Cart[]=[];
-  completedItems:Cart[]=[];
+  cartList: Cart[] = [];
+  completedItems: Cart[] = [];
   constructor() { }
 
 
-  getProductsInCart():Cart[]{
+  getProductsInCart(): Cart[] {
     return this.cartList;
   }
-  
-  addProductToCart(product:Product,quentity:number):void
-  {
-    this.cartList.push({product,quentity});
+
+  addProductToCart(product: Product, quentity: number): void {
+    this.completedItems=[];
+    if (this.isProductExist(product)) {
+      this.updateProductQuentity(product,quentity)
+    } else
+      this.cartList.push({ product, quentity });
   }
 
-  removeFromCart(id:Number):void{
-   const index =this.cartList.findIndex(p =>{p.product.id===id})
-    this.cartList.splice(index,1);
+  updateProductQuentity(product:Product,quentity:number)
+  {
+    this.cartList.map(c => {
+      if (c.product.id === product.id)
+        return c.quentity += quentity;
+      else return c;
+    })
+  }
+  isProductExist(product: Product): boolean { return this.cartList.filter(p => p.product.id === product.id).length > 0 }
+  removeFromCart(id: Number): void {
+    const index = this.cartList.findIndex(p => { p.product.id === id })
+    this.cartList.splice(index, 1);
   }
 
-  setCompletedItems()
-  {
+  setCompletedItems() {
     this.cartList.forEach(i => this.completedItems.push(i));
   }
-  getCompletedItems():Cart[]{
+  getCompletedItems(): Cart[] {
     return this.completedItems;
   }
-  getCount():Number{
+  getCount(): Number {
     return this.cartList.length;
   }
-  clearCart():void{this.cartList.splice(0,this.cartList.length)}
+  clearCart(): void { this.cartList.splice(0, this.cartList.length) }
 }

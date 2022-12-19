@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CartBase } from 'src/app/common/cart-base';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart/cart.service';
 
@@ -9,20 +10,15 @@ import { CartService } from 'src/app/services/cart/cart.service';
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.css']
 })
-export class ProductItemComponent implements OnInit {
+export class ProductItemComponent extends CartBase implements OnInit {
   @Input()
   product!: Product;
-  selectFormControl = new FormControl('', Validators.required);
-  quntities:Number[]=[1,2,3,4,5,6];
-  constructor(private cartService:CartService,private _snackBar: MatSnackBar) { }
+
+  constructor(private cartService:CartService,private _snackBar: MatSnackBar) {super(_snackBar,cartService) }
 
   ngOnInit(): void {
   }
 
-  addToCart():void{
-    this.cartService.addProductToCart(this.product,this.selectFormControl.value);
-    this._snackBar.open('Product Added To Cart', 'Dismis')._dismissAfter(2000);
-  }
-
+ 
  
 }

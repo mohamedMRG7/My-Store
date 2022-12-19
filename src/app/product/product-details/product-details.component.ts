@@ -1,8 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import {  Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { CartBase } from 'src/app/common/cart-base';
 import { Product } from 'src/app/models/product';
+import { CartService } from 'src/app/services/cart/cart.service';
 import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
@@ -10,21 +13,22 @@ import { ProductService } from 'src/app/services/product/product.service';
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css']
 })
-export class ProductDetailsComponent implements OnInit ,OnDestroy{
-  selectFormControl = new FormControl('', Validators.required);
-  quntities:Number[]=[1,2,3,4,5,6];
+export class ProductDetailsComponent extends CartBase implements OnInit, OnDestroy {
+  
   product!: Product;
-  subscriber:Subscription=new Subscription()
-  constructor(private router:ActivatedRoute,private productService:ProductService) { }
+  subscriber: Subscription = new Subscription()
+  constructor(private router: ActivatedRoute, private productService: ProductService, private cartService: CartService, private  _snackBar: MatSnackBar) {
+    super(_snackBar,cartService);
+  }
 
   ngOnInit(): void {
-    this.subscriber= this.router.queryParams.subscribe(params=> {
-     this.productService.getProductByID(params['product']).subscribe(product => {
-          this.product=product;
-        });
+    this.subscriber = this.router.queryParams.subscribe(params => {
+      this.productService.getProductByID(params['product']).subscribe(product => {
+        this.product = product;
+      });
     });
 
-    
+
   }
 
 
