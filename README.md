@@ -32,7 +32,7 @@ E-Commerce application That allows you to buy different products and control you
 ## Models
 
 #### 1-Cart model which contain the cart properties
-#### 2-Product model which contain the cart properties
+#### 2-Product model which contain the product properties
 
 
 ## Common
