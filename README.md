@@ -14,13 +14,13 @@ E-Commerce application That allows you to buy different products and control you
 
 ## Components
 
-### Product Components  (In product package)
+### Product Components  
 #### 1-product-details contain details of the product
 #### 2-Product-List  loop in the products from provided source
 #### 3-Product-item present one item in the list
 
 
-### Cart Component (In cart package)
+### Cart Component 
 #### 1-Cart-item contain the table of items in the cart
 #### 2-Cart-info contain stepper that process cart payment 
 
