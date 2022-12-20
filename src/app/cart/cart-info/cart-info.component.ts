@@ -32,9 +32,11 @@ export class CartInfoComponent implements OnInit,DoCheck {
   }
 
   submit(): void { 
+    if(this.paymentFormGroup.valid){
     this.stepperEditable = false;
     this.cartService.setCompletedItems();
     this.cartService.clearCart();
+  }
   }
   itemsCount() { return this.cartService.getCount() }
 }
